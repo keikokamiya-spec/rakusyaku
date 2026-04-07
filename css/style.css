@@ -864,18 +864,168 @@ ul  { list-style: none; }
 }
 
 .osechi-deadline {
-  padding: 1rem 1.25rem;
+  padding: 1.5rem 1.75rem;
   background: rgba(201,168,76,0.1);
   border-left: 3px solid var(--gold);
   border-radius: 0 2px 2px 0;
-  margin-top: 1.25rem;
+  margin-top: 2rem;
 }
 .osechi-deadline p {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   color: var(--text-mid);
-  line-height: 1.8;
+  line-height: 2;
 }
 .osechi-deadline strong { color: var(--navy); }
+
+/* 新レイアウト用 */
+.osechi-stats-band {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: clamp(40px, 6vw, 72px);
+}
+.osechi-stats-band .osechi-stat {
+  background: var(--white);
+  border-radius: 2px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(26,39,68,0.06);
+  border-top: 3px solid var(--gold);
+}
+.osechi-stats-band .osechi-stat-num {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  color: var(--navy);
+  line-height: 1.2;
+}
+.osechi-stats-band .osechi-stat-num small {
+  font-size: 1rem;
+}
+.osechi-stats-band .osechi-stat-label {
+  font-size: 0.72rem;
+  color: var(--text-light);
+  margin-top: 0.25rem;
+  letter-spacing: 0.05em;
+}
+
+/* 詳細グリッド（テキスト＋写真 2カラム） */
+.osechi-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 5vw, 64px);
+  align-items: start;
+  margin-bottom: clamp(40px, 6vw, 64px);
+}
+.osechi-detail-grid--rev { direction: rtl; }
+.osechi-detail-grid--rev > * { direction: ltr; }
+
+.osechi-detail-text p {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  color: var(--text-mid);
+  line-height: 2.2;
+  margin-bottom: 0.9rem;
+}
+
+.osechi-detail-img {
+  margin: 0;
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+.osechi-detail-img img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s var(--ease);
+}
+.osechi-detail-img:hover img { transform: scale(1.04); }
+.osechi-detail-img figcaption {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  letter-spacing: 0.08em;
+  text-align: center;
+  padding: 0.6rem 0;
+}
+.osechi-detail-img::before {
+  content: '';
+  position: absolute;
+  top: -8px; left: -8px;
+  width: 50%; height: 50%;
+  border-top: 1px solid var(--gold);
+  border-left: 1px solid var(--gold);
+  pointer-events: none; z-index: 1;
+}
+.osechi-detail-img::after {
+  content: '';
+  position: absolute;
+  bottom: 24px; right: -8px;
+  width: 50%; height: 50%;
+  border-bottom: 1px solid var(--gold);
+  border-right: 1px solid var(--gold);
+  pointer-events: none; z-index: 1;
+}
+
+/* ブロックセクション */
+.osechi-block {
+  background: var(--white);
+  border-radius: 2px;
+  padding: 2rem 2.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 16px rgba(26,39,68,0.05);
+  border-left: 3px solid var(--gold);
+}
+.osechi-block--narrow {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.osechi-block p {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  color: var(--text-mid);
+  line-height: 2.2;
+  margin-bottom: 0.5rem;
+}
+
+.osechi-block-title {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--navy);
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(201,168,76,0.25);
+}
+
+/* 引用スタイル（お客様の声） */
+.osechi-quote {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--navy);
+  background: var(--cream);
+  border-left: 4px solid var(--gold);
+  padding: 1rem 1.5rem;
+  margin: 1rem 0 1.25rem;
+  border-radius: 0 2px 2px 0;
+  line-height: 1.8;
+}
+
+/* 内容リスト */
+.osechi-list {
+  list-style: none;
+  padding: 0;
+}
+.osechi-list li {
+  font-family: var(--font-serif);
+  font-size: 0.98rem;
+  color: var(--text-mid);
+  line-height: 2.2;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(201,168,76,0.1);
+}
+.osechi-list li:last-child { border-bottom: none; }
 
 /* ─── GALLERY SLIDER ─────────────────────────── */
 #gallery {
@@ -1148,7 +1298,7 @@ ul  { list-style: none; }
 
   .concept-grid,
   .story-grid,
-  .osechi-grid,
+  .osechi-detail-grid,
   .info-grid { grid-template-columns: 1fr; gap: 2.5rem; }
 
   .strengths-grid { grid-template-columns: 1fr 1fr; }
@@ -1165,6 +1315,10 @@ ul  { list-style: none; }
   .strengths-grid { grid-template-columns: 1fr; }
   .osechi-plans { grid-template-columns: 1fr; }
   .osechi-stats { grid-template-columns: 1fr 1fr; }
+  .osechi-stats-band { grid-template-columns: 1fr 1fr; }
+  .osechi-detail-grid,
+  .osechi-detail-grid--rev { grid-template-columns: 1fr; direction: ltr; }
+  .osechi-block { padding: 1.5rem; }
   .hero-actions { flex-direction: column; }
   .hero-catch { font-size: 1.7rem; }
 }
