@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# LINEエクスポート画像（不要なフォルダ）
+images/line_oa_chat_*/
+
+# Node modules
+node_modules/
+
+# Editor
+.vscode/
+.idea/
+
+# Local env
+.env

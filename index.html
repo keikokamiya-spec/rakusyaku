@@ -11,6 +11,10 @@
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="ja_JP" />
   <link rel="icon" href="images/logo.png" type="image/png" />
+  <style>
+    /* ヒーロー背景：店内写真 */
+    #hero-bg-override { background-image: url('images/line_oa_chat_260310_144904_group/line_oa_chat_260310_144904_group_0.jpg'); }
+  </style>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet" />
@@ -81,7 +85,7 @@
      HERO
      ============================== -->
 <section id="hero" aria-labelledby="hero-title">
-  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-bg" style="background-image:url('images/line_oa_chat_260310_144904_group/line_oa_chat_260310_144904_group_0.jpg')" aria-hidden="true"></div>
   <div class="hero-content">
     <p class="hero-label">FERMENTED JAPANESE CUISINE</p>
     <h1 id="hero-title" class="hero-catch">
@@ -116,7 +120,7 @@
     <div class="concept-grid">
 
       <figure class="concept-img reveal">
-        <img src="images/concept.jpg" alt="自家製発酵調味料 — 生麹甘酒・もろみ・味噌" loading="lazy" />
+        <img src="images/line_oa_chat_260310_144648_group/line_oa_chat_260310_144647_group_4.jpg" alt="自家製発酵調味料 — 醤・もろみ・甘酒の並び" loading="lazy" />
       </figure>
 
       <div class="concept-text">
@@ -227,8 +231,8 @@
       </div>
 
       <div class="story-visual reveal reveal-delay-2">
-        <div class="story-visual-inner">
-          <span class="story-mon">楽</span>
+        <div class="story-visual-inner" style="overflow:hidden;">
+          <img src="images/line_oa_chat_260310_144648_group/line_oa_chat_260310_144647_group_1.jpg" alt="店主が麹を扱う様子" style="width:100%;height:100%;object-fit:cover;" />
         </div>
       </div>
 
@@ -535,28 +539,77 @@
   <div class="slider-wrap reveal">
     <div class="slider-track" id="slider-track">
 
-      <!-- Slide 1: Hero image reused -->
+      <!-- Slide 1: 店内カウンター -->
       <div class="slide-item">
-        <img src="images/hero.jpg" alt="楽只の発酵料理" loading="lazy" />
-        <div class="slide-label"><span>季節のお料理</span></div>
+        <img src="images/line_oa_chat_260310_144904_group/line_oa_chat_260310_144904_group_0.jpg" alt="楽只 店内カウンター席" loading="lazy" />
+        <div class="slide-label"><span>店内の様子</span></div>
       </div>
 
-      <!-- Slide 2: Concept image -->
+      <!-- Slide 2: 前菜盛り合わせ（秋） -->
       <div class="slide-item">
-        <img src="images/concept.jpg" alt="自家製発酵調味料" loading="lazy" />
+        <img src="images/line_oa_chat_260310_144805_group/line_oa_chat_260310_144805_group_0.jpg" alt="秋の前菜盛り合わせ" loading="lazy" />
+        <div class="slide-label"><span>秋の前菜盛り合わせ</span></div>
+      </div>
+
+      <!-- Slide 3: 懐石前菜 -->
+      <div class="slide-item">
+        <img src="images/line_oa_chat_260310_144805_group/line_oa_chat_260310_144805_group_1.jpg" alt="懐石前菜" loading="lazy" />
+        <div class="slide-label"><span>季節の懐石</span></div>
+      </div>
+
+      <!-- Slide 4: 生牡蠣 -->
+      <div class="slide-item">
+        <img src="images/line_oa_chat_260310_144839_group/line_oa_chat_260310_144838_group_0.jpg" alt="生牡蠣」" loading="lazy" />
+        <div class="slide-label"><span>生牡蠣</span></div>
+      </div>
+
+      <!-- Slide 5: お椀（澄まし汁）-->
+      <div class="slide-item">
+        <img src="images/line_oa_chat_260310_144819_group/line_oa_chat_260310_144819_group_0.jpg" alt="春のお椀 澄まし汁" loading="lazy" />
+        <div class="slide-label"><span>春のお椀</span></div>
+      </div>
+
+      <!-- Slide 6: 刺身（鯛） -->
+      <div class="slide-item">
+        <img src="images/line_oa_chat_260310_144819_group/line_oa_chat_260310_144819_group_1.jpg" alt="本日の刺身（鯛）" loading="lazy" />
+        <div class="slide-label"><span>本日の刺身</span></div>
+      </div>
+
+      <!-- Slide 7: 蟹料理 -->
+      <div class="slide-item">
+        <img src="images/line_oa_chat_260310_144859_group/line_oa_chat_260310_144858_group_0.jpg" alt="蟹料理" loading="lazy" />
+        <div class="slide-label"><span>蟹料理</span></div>
+      </div>
+
+      <!-- Slide 8: 発酵調味料（俯瞰） -->
+      <div class="slide-item">
+        <img src="images/line_oa_chat_260310_144648_group/line_oa_chat_260310_144647_group_5.jpg" alt="自家製発酵調味料 俯瞰」" loading="lazy" />
         <div class="slide-label"><span>自家製発酵調味料</span></div>
       </div>
 
-      <!-- Slides 3–6: Styled placeholder cards -->
+      <!-- Slide 9: 土瓶蒸し -->
       <div class="slide-item">
-        <div class="slide-placeholder" style="background: linear-gradient(135deg, #0f1a30 0%, #2a3d6b 100%);">
-          <span style="font-family:var(--font-serif);font-size:2.5rem;color:rgba(201,168,76,0.5);letter-spacing:0.2em">造り</span>
-          <span style="font-size:0.72rem;letter-spacing:0.2em;color:rgba(255,255,255,0.4);text-transform:uppercase">SASHIMI</span>
-        </div>
-        <div class="slide-label"><span>本日の造り盛り合わせ</span></div>
+        <img src="images/line_oa_chat_260310_144912_group/line_oa_chat_260310_144912_group_0.jpg" alt="土瓶蒸し" loading="lazy" />
+        <div class="slide-label"><span>土瓶蒸し</span></div>
       </div>
 
+      <!-- Slide 10: 炊き込みご飯 -->
       <div class="slide-item">
+        <img src="images/line_oa_chat_260310_144901_group/line_oa_chat_260310_144901_group_0.jpg" alt="炊き込みご飯" loading="lazy" />
+        <div class="slide-label"><span>季節の炊き込みご飯</span></div>
+      </div>
+
+      <!-- Slide 11 (placeholder start for backward-compat): -->
+      <div class="slide-item">
+        <div class="slide-placeholder" style="background: linear-gradient(135deg, #0f1a30 0%, #2a3d6b 100%);">
+          <span style="font-family:var(--font-serif);font-size:2.5rem;color:rgba(201,168,76,0.5);letter-spacing:0.2em">楽</span>
+          <span style="font-size:0.72rem;letter-spacing:0.2em;color:rgba(255,255,255,0.4);text-transform:uppercase">RAKUSHI</span>
+        </div>
+        <div class="slide-label"><span>日本料理 楽只</span></div>
+      </div>
+
+      <!-- remove remaining old placeholders -->
+      <div class="slide-item" style="display:none">
         <div class="slide-placeholder" style="background: linear-gradient(135deg, #1a2e1a 0%, #2d5a2d 100%);">
           <span style="font-family:var(--font-serif);font-size:2.5rem;color:rgba(201,168,76,0.5);letter-spacing:0.2em">蒸</span>
           <span style="font-size:0.72rem;letter-spacing:0.2em;color:rgba(255,255,255,0.4);text-transform:uppercase">STEAMED</span>
@@ -564,7 +617,7 @@
         <div class="slide-label"><span>旬野菜の蒸し籠</span></div>
       </div>
 
-      <div class="slide-item">
+      <div class="slide-item" style="display:none">
         <div class="slide-placeholder" style="background: linear-gradient(135deg, #2e1a0f 0%, #6b3d1a 100%);">
           <span style="font-family:var(--font-serif);font-size:2.5rem;color:rgba(201,168,76,0.5);letter-spacing:0.2em">焼</span>
           <span style="font-size:0.72rem;letter-spacing:0.2em;color:rgba(255,255,255,0.4);text-transform:uppercase">GRILLED</span>
@@ -572,7 +625,7 @@
         <div class="slide-label"><span>甘酒麹漬け魚の焼き物</span></div>
       </div>
 
-      <div class="slide-item">
+      <div class="slide-item" style="display:none">
         <div class="slide-placeholder" style="background: linear-gradient(135deg, #1a1a2e 0%, #4a4a7a 100%);">
           <span style="font-family:var(--font-serif);font-size:2.5rem;color:rgba(201,168,76,0.5);letter-spacing:0.2em">甘酒</span>
           <span style="font-size:0.72rem;letter-spacing:0.2em;color:rgba(255,255,255,0.4);text-transform:uppercase">AMAZAKE</span>
@@ -580,7 +633,7 @@
         <div class="slide-label"><span>自家製生麹甘酒</span></div>
       </div>
 
-      <div class="slide-item">
+      <div class="slide-item" style="display:none">
         <div class="slide-placeholder" style="background: linear-gradient(135deg, #2e2a1a 0%, #7a6a3a 100%);">
           <span style="font-family:var(--font-serif);font-size:2.5rem;color:rgba(201,168,76,0.5);letter-spacing:0.2em">店内</span>
           <span style="font-size:0.72rem;letter-spacing:0.2em;color:rgba(255,255,255,0.4);text-transform:uppercase">INTERIOR</span>
