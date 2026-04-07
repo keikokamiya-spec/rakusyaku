@@ -3,8 +3,8 @@
 .AppleDouble
 .LSOverride
 
-# LINEエクスポート画像（不要なフォルダ）
-images/line_oa_chat_*/
+# LINEエクスポート画像（実写素材として使用）
+# images/line_oa_chat_*/
 
 # Node modules
 node_modules/
