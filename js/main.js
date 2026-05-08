@@ -109,6 +109,23 @@ document.addEventListener('DOMContentLoaded', () => {
     track.addEventListener('touchend', onDragEnd);
   }
 
+  /* ── Course horizontal slider ── */
+  const courseSlider = document.getElementById('course-slider');
+  const coursePrev = document.querySelector('.course-slide-btn--prev');
+  const courseNext = document.querySelector('.course-slide-btn--next');
+
+  if (courseSlider) {
+    const scrollCourse = (direction) => {
+      const card = courseSlider.querySelector('.course-card');
+      const gap = 16;
+      const amount = card ? card.offsetWidth + gap : courseSlider.clientWidth * 0.8;
+      courseSlider.scrollBy({ left: direction * amount, behavior: 'smooth' });
+    };
+
+    if (coursePrev) coursePrev.addEventListener('click', () => scrollCourse(-1));
+    if (courseNext) courseNext.addEventListener('click', () => scrollCourse(1));
+  }
+
   /* ── Smooth anchor for all hash links ── */
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {

@@ -421,22 +421,26 @@ ul  { list-style: none; }
 
 /* ─── CONCEPT ────────────────────────────────── */
 #concept {
+  position: relative;
   padding: var(--section-pad) 0;
-  background: var(--white);
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.93) 0%, rgba(255,255,255,0.86) 48%, rgba(255,255,255,0.58) 100%),
+    url('../images/line_oa_chat_260310_144648_group/line_oa_chat_260310_144647_group_4.jpg') center / cover no-repeat;
+}
+#concept .container {
+  position: relative;
+  z-index: 1;
 }
 
 .concept-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 640px);
   gap: clamp(40px, 6vw, 80px);
   align-items: center;
 }
 
 .concept-img {
-  position: relative;
-  border-radius: 2px;
-  overflow: hidden;
-  aspect-ratio: 4/5;
+  display: none;
 }
 .concept-img img {
   width: 100%;
@@ -635,7 +639,9 @@ ul  { list-style: none; }
 /* ─── MENU / お品書き ─────────────────────────── */
 #menu {
   padding: var(--section-pad) 0;
-  background: var(--white);
+  background:
+    linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),
+    url('../images/haikei.png') center / cover no-repeat;
 }
 
 .menu-header {
@@ -653,6 +659,9 @@ ul  { list-style: none; }
   border: 1px solid rgba(201,168,76,0.2);
   border-radius: 2px;
   overflow: hidden;
+}
+.menu-category--wide {
+  grid-column: 1 / -1;
 }
 .menu-category-header {
   background: var(--navy);
@@ -697,6 +706,247 @@ ul  { list-style: none; }
   margin-left: 1rem;
 }
 
+.takeout-menu {
+  padding: 1.5rem;
+  background: var(--white);
+}
+.takeout-title {
+  font-family: var(--font-serif);
+  color: var(--navy);
+  font-size: 1.15rem;
+  margin: 0 0 1.2rem;
+}
+.takeout-group {
+  border-top: 1px solid rgba(201,168,76,0.16);
+  padding: 1.2rem 0 0;
+  margin-top: 1.2rem;
+}
+.takeout-group:first-of-type {
+  margin-top: 0;
+}
+.takeout-group h4 {
+  font-family: var(--font-serif);
+  color: var(--navy);
+  font-size: 1rem;
+  margin: 0 0 0.75rem;
+}
+.takeout-group-note {
+  color: var(--gold);
+  font-size: 0.82rem;
+  margin: -0.35rem 0 0.75rem;
+}
+.takeout-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid rgba(201,168,76,0.1);
+}
+.takeout-item:last-child {
+  border-bottom: none;
+}
+.takeout-item--featured {
+  background: var(--cream);
+  margin: 0 -0.5rem;
+  padding: 1rem 0.5rem;
+}
+.takeout-item-name {
+  font-family: var(--font-serif);
+  color: var(--text-main);
+  font-size: 0.94rem;
+  line-height: 1.7;
+  margin: 0;
+}
+.takeout-item-desc {
+  color: var(--text-mid);
+  font-size: 0.82rem;
+  line-height: 1.85;
+  margin: 0.3rem 0 0;
+}
+.takeout-rank {
+  display: inline-flex;
+  align-items: center;
+  background: var(--gold);
+  color: var(--white);
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  line-height: 1;
+  padding: 0.28rem 0.5rem;
+  margin-right: 0.5rem;
+}
+.takeout-price,
+.takeout-price-list {
+  color: var(--gold);
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  text-align: right;
+}
+.takeout-price-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.takeout-price-list small {
+  color: var(--text-light);
+  font-size: 0.72rem;
+  letter-spacing: 0;
+}
+.takeout-notes {
+  border-top: 1px solid rgba(201,168,76,0.16);
+  color: var(--text-light);
+  font-size: 0.78rem;
+  line-height: 1.8;
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+}
+.takeout-notes li::before {
+  content: "※";
+  color: var(--gold);
+  margin-right: 0.2rem;
+}
+
+.course-slider-shell {
+  position: relative;
+  background: var(--white);
+}
+.course-slider {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding: 1.25rem;
+  scrollbar-width: thin;
+}
+.course-card {
+  flex: 0 0 min(640px, 86vw);
+  border: 1px solid rgba(18, 35, 62, 0.14);
+  border-radius: 8px;
+  background: var(--white);
+  scroll-snap-align: start;
+  overflow: hidden;
+}
+.course-card-main {
+  display: grid;
+  grid-template-columns: 128px 1fr;
+  gap: 1.25rem;
+  align-items: start;
+  padding: 1.25rem;
+  border-bottom: 1px solid rgba(18, 35, 62, 0.1);
+}
+.course-card-img {
+  width: 128px;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+.course-card-title {
+  font-family: var(--font-serif);
+  color: var(--text-main);
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  line-height: 1.55;
+  margin: 0 0 0.75rem;
+}
+.course-card-price {
+  color: var(--text-main);
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+.course-card-body {
+  padding: 1.25rem;
+}
+.course-card-plan {
+  color: var(--text-main);
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  margin: 0 0 0.35rem;
+}
+.course-card-desc {
+  color: var(--text-mid);
+  font-size: 0.84rem;
+  line-height: 1.8;
+  margin: 0 0 0.8rem;
+}
+.course-card-desc--note {
+  margin: 0.8rem 0 0;
+}
+.course-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+}
+.course-tags span {
+  border-radius: 999px;
+  background: var(--cream);
+  color: var(--text-mid);
+  font-size: 0.78rem;
+  padding: 0.25rem 0.7rem;
+}
+.course-card-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.3rem 1rem;
+  color: var(--text-mid);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.course-card-list li::before {
+  content: "■";
+  color: var(--gold);
+  margin-right: 0.25rem;
+}
+.course-short-option {
+  border-top: 1px solid rgba(201,168,76,0.16);
+  background: var(--cream);
+  margin-top: 1rem;
+  padding: 0.9rem;
+}
+.course-short-title {
+  color: var(--text-main);
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  margin: 0 0 0.25rem;
+}
+.course-short-price {
+  color: var(--gold);
+  font-size: 0.9rem;
+  margin: 0 0 0.25rem;
+}
+.course-short-text {
+  color: var(--text-mid);
+  font-size: 0.8rem;
+  line-height: 1.7;
+  margin: 0;
+}
+.course-slide-btn {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(18, 35, 62, 0.18);
+  background: rgba(255,255,255,0.94);
+  color: var(--navy);
+  font-size: 2rem;
+  line-height: 1;
+  transform: translateY(-50%);
+  cursor: pointer;
+  box-shadow: 0 8px 22px rgba(18, 35, 62, 0.12);
+}
+.course-slide-btn--prev { left: 0.4rem; }
+.course-slide-btn--next { right: 0.4rem; }
+.course-slide-btn:hover {
+  background: var(--navy);
+  color: var(--white);
+}
+
 .menu-note {
   text-align: center;
   margin-top: 2.5rem;
@@ -708,7 +958,9 @@ ul  { list-style: none; }
 /* ─── FERMENTED OSECHI SPECIAL ────────────────── */
 #osechi {
   padding: var(--section-pad) 0;
-  background: var(--cream-warm);
+  background:
+    linear-gradient(rgba(250,248,244,0.9), rgba(250,248,244,0.9)),
+    url('../images/haikei.png') center / cover no-repeat;
   position: relative;
   overflow: hidden;
 }
@@ -1030,7 +1282,9 @@ ul  { list-style: none; }
 /* ─── GALLERY SLIDER ─────────────────────────── */
 #gallery {
   padding: var(--section-pad) 0;
-  background: var(--navy-deep);
+  background:
+    linear-gradient(rgba(15,26,48,0.9), rgba(15,26,48,0.9)),
+    url('../images/haikei.png') center / cover no-repeat;
 }
 
 #gallery .section-label { color: var(--gold-light); }
@@ -1124,7 +1378,9 @@ ul  { list-style: none; }
 /* ─── INFORMATION ────────────────────────────── */
 #info {
   padding: var(--section-pad) 0;
-  background: var(--white);
+  background:
+    linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),
+    url('../images/haikei.png') center / cover no-repeat;
 }
 
 .info-grid {
@@ -1321,4 +1577,39 @@ ul  { list-style: none; }
   .osechi-block { padding: 1.5rem; }
   .hero-actions { flex-direction: column; }
   .hero-catch { font-size: 1.7rem; }
+  .course-slider {
+    padding: 1rem;
+  }
+  .course-card {
+    flex-basis: 88vw;
+  }
+  .course-card-main {
+    grid-template-columns: 92px 1fr;
+    gap: 0.9rem;
+    padding: 1rem;
+  }
+  .course-card-img {
+    width: 92px;
+  }
+  .course-card-body {
+    padding: 1rem;
+  }
+  .course-card-list {
+    grid-template-columns: 1fr;
+  }
+  .course-slide-btn {
+    display: none;
+  }
+  .takeout-menu {
+    padding: 1rem;
+  }
+  .takeout-item {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+  .takeout-price,
+  .takeout-price-list {
+    text-align: left;
+    white-space: normal;
+  }
 }
