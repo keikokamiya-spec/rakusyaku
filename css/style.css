@@ -901,6 +901,19 @@ ul  { list-style: none; }
   color: var(--gold);
   margin-right: 0.25rem;
 }
+.course-card-list li span {
+  display: block;
+  color: var(--text-light);
+  font-size: 0.78rem;
+  line-height: 1.65;
+  margin: 0.12rem 0 0 1.1rem;
+}
+.course-note-box {
+  border-top: 1px solid rgba(201,168,76,0.16);
+  background: var(--cream);
+  margin-top: 1rem;
+  padding: 0.9rem;
+}
 .course-short-option {
   border-top: 1px solid rgba(201,168,76,0.16);
   background: var(--cream);
@@ -948,11 +961,24 @@ ul  { list-style: none; }
 }
 
 .menu-note {
-  text-align: center;
-  margin-top: 2.5rem;
+  grid-column: 1 / -1;
+  text-align: left;
+  margin-top: 0.5rem;
   font-size: 0.82rem;
   color: var(--text-light);
-  line-height: 2;
+  line-height: 1.9;
+}
+.menu-note ul,
+.menu-note ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.menu-note-title {
+  color: var(--text-main);
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  margin: 1.4rem 0 0.35rem;
 }
 
 /* ─── FERMENTED OSECHI SPECIAL ────────────────── */
@@ -1154,6 +1180,38 @@ ul  { list-style: none; }
   font-size: 1rem;
 }
 .osechi-stats-band .osechi-stat-label {
+  font-size: 0.72rem;
+  color: var(--text-light);
+  margin-top: 0.25rem;
+  letter-spacing: 0.05em;
+}
+.osechi-stats-band--mobile {
+  display: none;
+}
+.osechi-stats-under-image {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.4rem;
+}
+.osechi-stats-under-image .osechi-stat {
+  background: var(--white);
+  border-radius: 2px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(26,39,68,0.06);
+  border-top: 3px solid var(--gold);
+}
+.osechi-stats-under-image .osechi-stat-num {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  color: var(--navy);
+  line-height: 1.2;
+}
+.osechi-stats-under-image .osechi-stat-num small {
+  font-size: 1rem;
+}
+.osechi-stats-under-image .osechi-stat-label {
   font-size: 0.72rem;
   color: var(--text-light);
   margin-top: 0.25rem;
@@ -1565,6 +1623,14 @@ ul  { list-style: none; }
 
   .footer-top { flex-direction: column; }
   .footer-links { flex-direction: column; gap: 2rem; }
+
+  .osechi-stats-band--mobile {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .osechi-stats-under-image {
+    display: none;
+  }
 }
 
 @media (max-width: 600px) {
