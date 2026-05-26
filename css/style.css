@@ -908,6 +908,20 @@ ul  { list-style: none; }
   line-height: 1.65;
   margin: 0.12rem 0 0 1.1rem;
 }
+.course-card-list li.course-meal {
+  grid-column: 1 / -1;
+}
+.course-meal-note {
+  display: block;
+  border-left: 2px solid var(--gold);
+  background: var(--cream);
+  color: var(--text-mid);
+  font-size: 0.8rem;
+  font-style: normal;
+  line-height: 1.7;
+  margin-top: 0.5rem;
+  padding: 0.65rem 0.75rem;
+}
 .course-note-box {
   border-top: 1px solid rgba(201,168,76,0.16);
   background: var(--cream);
