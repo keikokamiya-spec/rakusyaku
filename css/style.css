@@ -308,6 +308,10 @@ ul  { list-style: none; }
 }
 .mobile-nav a:hover { color: var(--gold); }
 .mobile-nav .mobile-cta { display: flex; flex-direction: column; align-items: center; gap: 1rem; margin-top: 1.5rem; }
+.mobile-nav .mobile-cta .btn {
+  min-width: 182px;
+  justify-content: center;
+}
 
 /* ─── HERO ───────────────────────────────────── */
 #hero {
@@ -1567,8 +1571,9 @@ ul  { list-style: none; }
 }
 .footer-logo img {
   width: 40px;
+  height: 40px;
+  object-fit: contain;
   opacity: 0.9;
-  filter: brightness(0) invert(1);
 }
 .footer-logo-text .footer-logo-ja {
   font-family: var(--font-serif);
