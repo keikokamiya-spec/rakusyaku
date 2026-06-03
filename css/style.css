@@ -1514,6 +1514,50 @@ ul  { list-style: none; }
   color: var(--text-mid);
   line-height: 1.9;
 }
+.info-reservation-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.info-reservation-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0.65rem 1.2rem;
+  border-radius: 2px;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  transition: all 0.3s var(--ease);
+}
+.info-reservation-btn--tel {
+  border: 1.5px solid var(--navy);
+  color: var(--navy);
+}
+.info-reservation-btn--web {
+  border: 1.5px solid var(--gold);
+  background: var(--gold);
+  color: var(--white);
+}
+.info-reservation-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(26,39,68,0.14);
+}
+.info-reservation-btn--tel:hover {
+  background: var(--navy);
+  color: var(--white);
+}
+.info-reservation-btn--web:hover {
+  background: var(--gold-light);
+  border-color: var(--gold-light);
+}
+.info-reservation-note {
+  margin-top: 0.65rem;
+  color: var(--text-mid);
+}
 
 .map-wrap {
   border-radius: 2px;
