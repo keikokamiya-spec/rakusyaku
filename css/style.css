@@ -999,6 +999,23 @@ ul  { list-style: none; }
   background: var(--navy);
   color: var(--white);
 }
+.course-slide-count {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  color: var(--text-mid);
+  font-size: 0.86rem;
+  line-height: 1;
+  padding: 0 1rem 1rem;
+}
+.course-slide-count-current {
+  color: var(--gold);
+  font-weight: 700;
+}
+.course-slide-count-divider {
+  color: rgba(18, 35, 62, 0.32);
+}
 
 .menu-note {
   grid-column: 1 / -1;
@@ -1750,6 +1767,9 @@ ul  { list-style: none; }
   }
   .course-slide-btn {
     display: none;
+  }
+  .course-slide-count {
+    display: flex;
   }
   .takeout-menu {
     padding: 1rem;

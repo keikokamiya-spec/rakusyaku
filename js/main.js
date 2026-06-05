@@ -113,8 +113,39 @@ document.addEventListener('DOMContentLoaded', () => {
   const courseSlider = document.getElementById('course-slider');
   const coursePrev = document.querySelector('.course-slide-btn--prev');
   const courseNext = document.querySelector('.course-slide-btn--next');
+  const courseCount = document.getElementById('course-slide-count');
 
   if (courseSlider) {
+    const courseCards = Array.from(courseSlider.querySelectorAll('.course-card'));
+    const currentCount = courseCount?.querySelector('.course-slide-count-current');
+    const totalCount = courseCount?.querySelector('.course-slide-count-total');
+    let courseTicking = false;
+
+    if (totalCount) totalCount.textContent = String(courseCards.length);
+
+    const updateCourseCount = () => {
+      if (!currentCount || !courseCards.length) return;
+
+      const activeIndex = courseCards.reduce((closestIndex, card, index) => {
+        const currentCardLeft = courseCards[closestIndex].offsetLeft - courseSlider.offsetLeft;
+        const cardLeft = card.offsetLeft - courseSlider.offsetLeft;
+        return Math.abs(cardLeft - courseSlider.scrollLeft) < Math.abs(currentCardLeft - courseSlider.scrollLeft)
+          ? index
+          : closestIndex;
+      }, 0);
+
+      currentCount.textContent = String(activeIndex + 1);
+    };
+
+    const requestCourseCountUpdate = () => {
+      if (courseTicking) return;
+      courseTicking = true;
+      requestAnimationFrame(() => {
+        updateCourseCount();
+        courseTicking = false;
+      });
+    };
+
     const scrollCourse = (direction) => {
       const card = courseSlider.querySelector('.course-card');
       const gap = 16;
@@ -124,6 +155,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (coursePrev) coursePrev.addEventListener('click', () => scrollCourse(-1));
     if (courseNext) courseNext.addEventListener('click', () => scrollCourse(1));
+    courseSlider.addEventListener('scroll', requestCourseCountUpdate, { passive: true });
+    window.addEventListener('resize', requestCourseCountUpdate);
+    updateCourseCount();
   }
 
   /* ── Smooth anchor for all hash links ── */
